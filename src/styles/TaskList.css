@@ -1,0 +1,10 @@
+/* TaskList.css */
+
+.task-list {
+  margin-top: 20px;
+}
+
+/* Optional: You can add additional styles for the tasks' spacing */
+.task-item {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Mobile Devices */
+@media (max-width: 768px) {
+  .app {
+    padding: 10px;
+  }
+}
+
+/* Tablets and Small Desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .app {
+    padding: 15px;
+  }
+}
+
+/* Large Desktops and Wider Screens */
+@media (min-width: 1025px) {
+  .app {
+    padding: 20px;
+  }
+}
+/*
+In this example:
+
+    The body and .app styles set up the base layout and width for the app container. The app is centered horizontally with a maximum width of 1200px.
+
+    The h1 style centers the app title.
+
+    Three media queries are used to adjust the padding of the .app container for different screen sizes. The max-width values determine when each media query takes effect.
+        On mobile devices (up to 768px width), the padding is reduced to 10px.
+        On tablets and small desktops (769px to 1024px width), the padding is increased to 15px.
+        On larger desktops and wider screens (1025px and above), the padding is set back to 20px.
+
+You can further customize and refine these styles based on your app's design and requirements. As you continue building your components and adding styles, regularly test your app on various devices and screen sizes to ensure that it looks and functions well across the board.
+*/
