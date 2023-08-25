@@ -7,13 +7,26 @@
   border-bottom: 1px solid #ccc;
 }
 
-.task-item.completed {
-  text-decoration: line-through;
-  opacity: 0.6;
+.task-status {
+  margin-right: 10px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
-input[type="checkbox"] {
-  margin-right: 10px;
+.task-status.new {
+  background-color: #fb3636;
+  color: white;
+}
+
+.task-status.processing {
+  background-color: #ffff43;
+  color: white;
+}
+
+.task-status.done {
+  background-color: hsl(145, 85%, 57%);
+  color: white;
 }
 
 button {
@@ -22,6 +35,8 @@ button {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+  margin-left: auto; /* Move to the right side */
+  margin-right: 10px; /* Add 10px margin */
 }
 
 button:hover {

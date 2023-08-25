@@ -16,8 +16,9 @@ function TaskFilter({ onFilterChange }) {
       <label htmlFor="filter">Filter Tasks:</label>
       <select id="filter" value={selectedFilter} onChange={handleFilterChange}>
         <option value="all">All Tasks</option>
-        <option value="completed">Completed</option>
-        <option value="uncompleted">Uncompleted</option>
+        <option value="new">New</option>
+        <option value="processing">Processing</option>
+        <option value="done">Done</option>
       </select>
     </div>
   );
