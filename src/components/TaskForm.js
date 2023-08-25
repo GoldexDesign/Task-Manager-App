@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
-import "../styles/TaskForm.css";
+import "../styles/TaskForm.css"; // Add your CSS file here
 
 function TaskForm({ addTask }) {
   const [taskName, setTaskName] = useState("");
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleTaskNameChange = (event) => {
+    setTaskName(event.target.value);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
     if (taskName.trim() !== "") {
       addTask(taskName);
       setTaskName("");
@@ -17,19 +20,16 @@ function TaskForm({ addTask }) {
     <div className="task-form">
       <form onSubmit={handleSubmit}>
         <input
+          required
           type="text"
-          placeholder="Enter a new task"
+          placeholder="Add a new task..."
           value={taskName}
-          onChange={(e) => setTaskName(e.target.value)}
+          onChange={handleTaskNameChange}
         />
         <button type="submit">Add Task</button>
       </form>
     </div>
   );
 }
-
-TaskForm.propTypes = {
-  addTask: PropTypes.func.isRequired,
-};
 
 export default TaskForm;

@@ -1,11 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
-import TaskItem from "./TaskItem";
-import "../styles/TaskList.css";
+import TaskItem from "./TaskItem"; // Make sure to import TaskItem
 
 function TaskList({ tasks, toggleTaskCompletion, deleteTask }) {
   return (
     <div className="task-list">
+      {/* List of tasks */}
       {tasks.map((task) => (
         <TaskItem
           key={task.id}
