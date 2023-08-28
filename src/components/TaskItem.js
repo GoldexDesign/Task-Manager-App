@@ -11,12 +11,18 @@ function TaskItem({ task, deleteTask, updateTaskStatus }) {
   return (
     <div className={`task-item`}>
       <span>{task.name}</span>
-      <select value={task.status} onChange={handleStatusChange}>
+      <select
+        className="buttons-right"
+        value={task.status}
+        onChange={handleStatusChange}
+      >
         <option value="New">New</option>
         <option value="Processing">Processing</option>
         <option value="Done">Done</option>
       </select>
-      <button onClick={() => deleteTask(task.id)}>Delete</button>
+      <button className="buttons-right" onClick={() => deleteTask(task.id)}>
+        Delete
+      </button>
     </div>
   );
 }

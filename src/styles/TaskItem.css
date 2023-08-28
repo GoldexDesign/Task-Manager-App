@@ -42,3 +42,7 @@ button {
 button:hover {
   background-color: #ff7e63;
 }
+.buttons-right {
+  margin-left: auto; /* Move to the right side */
+  margin-bottom: 20px;
+}
