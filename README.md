@@ -9,11 +9,11 @@ Features
 
     Task Creation: Add new tasks seamlessly. Just type in your task's name, hit enter, and watch it appear on your list.
 
-    Task Status: Mark tasks as completed or uncompleted by clicking on them. This helps you track your progress at a glance.
+    Task Status: Mark tasks as New/Processing/Done. This helps you track your progress at a glance.
 
-    Task Filtering: Filter tasks based on their completion status. Choose to view all tasks, completed tasks, or uncompleted tasks only.
+    Task Filtering: Filter tasks based on their status. Choose to view All/New/Procesing/Done tasks.
 
-    Task Deletion: Completed a task or decided it's no longer necessary? No problem – delete tasks with a simple click.
+    Task Deletion: Done a task or decided it's no longer necessary? No problem – delete tasks with a simple click.
 
 How to Run
 
