@@ -8,7 +8,9 @@ function TaskForm({ addTask }) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (taskName.trim() !== "") {
-      addTask(taskName);
+      const formattedDate = new Date().toLocaleDateString("en-GB"); // Get current date in "dd/mm/yyyy" format
+      const taskWithDate = `${taskName} (${formattedDate})`;
+      addTask(taskWithDate);
       setTaskName("");
     }
   };
@@ -22,7 +24,6 @@ function TaskForm({ addTask }) {
         value={taskName}
         onChange={(event) => setTaskName(event.target.value)}
       />
-
       <button type="submit">Add Task</button>
     </form>
   );
