@@ -15,17 +15,17 @@
 }
 
 .task-status.new {
-  background-color: #fb3636;
+  background-color: #ff8d8d;
   color: white;
 }
 
 .task-status.processing {
-  background-color: #ffff43;
+  background-color: #ffffac;
   color: white;
 }
 
 .task-status.done {
-  background-color: hsl(145, 85%, 57%);
+  background-color: hsl(144, 86%, 83%);
   color: white;
 }
 
@@ -44,5 +44,4 @@ button:hover {
 }
 .buttons-right {
   margin-left: auto; /* Move to the right side */
-  margin-bottom: 20px;
 }
