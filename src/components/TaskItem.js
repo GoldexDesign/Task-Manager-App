@@ -1,24 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import "../styles/TaskItem.css";
-import TaskDetailPopup from "./TaskDetailPopup";
 
 function TaskItem({
   task,
   deleteTask,
   updateTaskStatus,
-  onSaveTaskDetail,
+
   onTaskClick,
 }) {
-  const [showDetailPopup, setShowDetailPopup] = useState(false);
-
   const handleStatusChange = (event) => {
     const newStatus = event.target.value;
     updateTaskStatus(task.id, newStatus);
-  };
-
-  const handleTaskNameClick = () => {
-    setShowDetailPopup(true);
   };
 
   return (
@@ -27,7 +20,6 @@ function TaskItem({
         className={`task-name ${task.status.toLowerCase()}`}
         onClick={() => {
           onTaskClick(task.id);
-          handleTaskNameClick();
         }}
       >
         {task.name}
@@ -40,13 +32,6 @@ function TaskItem({
         </select>
         <button onClick={() => deleteTask(task.id)}>Delete</button>
       </div>
-      {showDetailPopup && (
-        <TaskDetailPopup
-          task={task}
-          onClose={() => setShowDetailPopup(false)}
-          onSave={onSaveTaskDetail}
-        />
-      )}
     </div>
   );
 }
