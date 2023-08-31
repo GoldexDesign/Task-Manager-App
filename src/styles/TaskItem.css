@@ -14,19 +14,27 @@
   font-weight: bold;
 }
 
-.task-status.new {
-  background-color: #ff8d8d;
-  color: white;
+.task-name {
+  flex: 1;
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: black;
 }
 
-.task-status.processing {
-  background-color: #ffffac;
-  color: white;
+.task-name.new {
+  background-color: #ffc4c486;
 }
 
-.task-status.done {
-  background-color: hsl(144, 86%, 83%);
-  color: white;
+.task-name.processing {
+  background-color: #fefec9;
+}
+
+.task-name.done {
+  background-color: hsl(143, 72%, 94%);
+}
+
+.buttons-right {
+  margin-left: auto;
 }
 
 button {
@@ -35,13 +43,10 @@ button {
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-  margin-left: auto; /* Move to the right side */
-  margin-right: 10px; /* Add 10px margin */
+  margin-left: auto;
+  margin-right: 10px;
 }
 
 button:hover {
   background-color: #ff7e63;
-}
-.buttons-right {
-  margin-left: auto; /* Move to the right side */
 }

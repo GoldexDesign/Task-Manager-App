@@ -2,7 +2,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import TaskItem from "./TaskItem";
 
-function TaskList({ tasks, deleteTask, updateTaskStatus, currentFilter }) {
+function TaskList({
+  tasks,
+  deleteTask,
+  updateTaskStatus,
+  currentFilter,
+  onSaveTaskDetail,
+  onTaskClick,
+}) {
   const filteredTasks = tasks.filter((task) => {
     if (currentFilter === "all") {
       return true;
@@ -24,6 +31,8 @@ function TaskList({ tasks, deleteTask, updateTaskStatus, currentFilter }) {
           task={task}
           deleteTask={deleteTask}
           updateTaskStatus={updateTaskStatus}
+          onSaveTaskDetail={onSaveTaskDetail} // Use the onSaveTaskDetail prop
+          onTaskClick={onTaskClick}
         />
       ))}
     </div>
@@ -35,6 +44,8 @@ TaskList.propTypes = {
   deleteTask: PropTypes.func.isRequired,
   updateTaskStatus: PropTypes.func.isRequired,
   currentFilter: PropTypes.string.isRequired,
+  onSaveTaskDetail: PropTypes.func.isRequired,
+  onTaskClick: PropTypes.func.isRequired,
 };
 
 export default TaskList;

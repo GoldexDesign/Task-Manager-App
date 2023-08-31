@@ -3,20 +3,35 @@ import "./styles/App.css";
 import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 import TaskFilter from "./components/TaskFilter";
+import TaskDetailPopup from "./components/TaskDetailPopup";
 
 function App() {
   const [tasks, setTasks] = useState([]);
-  const [filter, setFilter] = useState("all"); // Add filter state
+  const [filter, setFilter] = useState("all");
+  const [selectedTask, setSelectedTask] = useState(null);
+
+  const handleTaskClick = (taskId) => {
+    const task = tasks.find((task) => task.id === taskId);
+    setSelectedTask(task);
+  };
+
+  const handleSaveTaskDetail = (taskId, notes) => {
+    const updatedTasks = tasks.map((task) =>
+      task.id === taskId ? { ...task, notes } : task
+    );
+    setTasks(updatedTasks);
+    setSelectedTask(null);
+  };
 
   const handleFilterChange = (newFilter) => {
-    setFilter(newFilter); // Update the filter state
+    setFilter(newFilter);
   };
 
   const addTask = (taskName) => {
     const newTask = {
       id: Date.now(),
       name: taskName,
-      status: "New", // Default status
+      status: "New",
     };
     setTasks([...tasks, newTask]);
   };
@@ -42,8 +57,17 @@ function App() {
         tasks={tasks}
         deleteTask={deleteTask}
         updateTaskStatus={updateTaskStatus}
-        currentFilter={filter} // Pass the currentFilter state
+        currentFilter={filter}
+        onSaveTaskDetail={handleSaveTaskDetail}
+        onTaskClick={handleTaskClick}
       />
+      {selectedTask && (
+        <TaskDetailPopup
+          task={selectedTask}
+          onClose={() => setSelectedTask(null)}
+          onSave={handleSaveTaskDetail}
+        />
+      )}
     </div>
   );
 }
