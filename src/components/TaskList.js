@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import TaskItem from "./TaskItem";
 
@@ -9,7 +9,15 @@ function TaskList({
   currentFilter,
   onSaveTaskDetail,
   onTaskClick,
+  setTasks, // Include setTasks as a prop
 }) {
+  useEffect(() => {
+    // Load tasks from local storage when the component mounts
+    const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
+    // Update the state with the saved tasks
+    setTasks((prevTasks) => [...prevTasks, ...savedTasks]);
+  }, [setTasks]); // Include setTasks in the dependency array
+
   const filteredTasks = tasks.filter((task) => {
     if (currentFilter === "all") {
       return true;
@@ -31,7 +39,7 @@ function TaskList({
           task={task}
           deleteTask={deleteTask}
           updateTaskStatus={updateTaskStatus}
-          onSaveTaskDetail={onSaveTaskDetail} // Use the onSaveTaskDetail prop
+          onSaveTaskDetail={onSaveTaskDetail}
           onTaskClick={onTaskClick}
         />
       ))}
@@ -46,6 +54,7 @@ TaskList.propTypes = {
   currentFilter: PropTypes.string.isRequired,
   onSaveTaskDetail: PropTypes.func.isRequired,
   onTaskClick: PropTypes.func.isRequired,
+  setTasks: PropTypes.func.isRequired, // Include setTasks in propTypes
 };
 
 export default TaskList;
