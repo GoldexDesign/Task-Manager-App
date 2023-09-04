@@ -1,4 +1,4 @@
-Task Manager App
+The Task Manager app is a work in progress, constantly evolving to meet its full potential !
 
 The Task Manager App is a simple yet powerful web application built using ReactJS that helps you manage your tasks and stay organized. 
 With an intuitive user interface and essential features, this app is designed to streamline your task management process.
