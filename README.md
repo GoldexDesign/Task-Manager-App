@@ -9,9 +9,11 @@ Features
 
     Task Creation: Add new tasks seamlessly. Just type in your task's name, hit enter, and watch it appear on your list.
 
-    Task Status: Mark tasks as New/Processing/Done. This helps you track your progress at a glance.
+    Task Date: The date will automatically be added when a new task is created.
 
-    Task Filtering: Filter tasks based on their status. Choose to view All/New/Procesing/Done tasks.
+    Task Status: Mark tasks as New/Processing/Done, with each status having a unique color. This helps you track your progress at a glance.
+
+    Task Filtering: You can filter tasks based on their status. You can choose to view All, New, Processing, or Done tasks.
 
     Task Deletion: Done a task or decided it's no longer necessary? No problem – delete tasks with a simple click.
 
@@ -30,8 +32,6 @@ npm install
 
 Run the App:
 
-sql
-
     npm start
 
     Access the App:
@@ -41,18 +41,18 @@ How to Use
 
     View Tasks:
         As you launch the app, your task list will be displayed prominently.
-        Each task is shown with its name and a checkbox indicating its completion status.
+        Each task is shown with its name / date / status (color)
 
     Add a New Task:
         Locate the "Add Task" input at the top of the app.
         Enter the name of the new task and press the "Enter" key or click the "Add" button to include it in your list.
 
     Manage Task Status:
-        To mark a task as completed or uncompleted, simply click the checkbox next to the task's name.
-        The app will automatically update the task's status and reposition it based on your choice.
+        To mark a task as  New/Processing/Done, simply click the select next to the task's name.
+        The app will automatically update the task's status / color and reposition it based on your choice.
 
     Filter Your Tasks:
-        Use the status filter buttons ("All," "Completed," "Uncompleted") to narrow down your task view.
+        Use the status filter buttons ( New/Processing/Done/All) to narrow down your task view.
         This feature helps you focus on specific types of tasks, whether you're reviewing your accomplishments or planning your next steps.
 
     Delete Tasks:
