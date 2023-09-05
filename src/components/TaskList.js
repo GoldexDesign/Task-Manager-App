@@ -9,16 +9,22 @@ function TaskList({
   currentFilter,
   onSaveTaskDetail,
   onTaskClick,
-  setTasks, // Include setTasks as a prop
+  setTasks,
 }) {
   useEffect(() => {
-    // Load tasks from local storage when the component mounts
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    // Update the state with the saved tasks
     setTasks((prevTasks) => [...prevTasks, ...savedTasks]);
-  }, [setTasks]); // Include setTasks in the dependency array
+  }, [setTasks]);
 
-  const filteredTasks = tasks.filter((task) => {
+  // Sort tasks based on their status
+  const sortedTasks = tasks.slice().sort((a, b) => {
+    if (a.status === "New" && b.status !== "New") return -1;
+    if (a.status === "Processing" && b.status === "Done") return -1; // Put "Done" at the end
+    if (a.status === "Done" && b.status !== "Done") return 1;
+    return 0;
+  });
+
+  const filteredTasks = sortedTasks.filter((task) => {
     if (currentFilter === "all") {
       return true;
     } else if (currentFilter === "new") {
@@ -54,7 +60,7 @@ TaskList.propTypes = {
   currentFilter: PropTypes.string.isRequired,
   onSaveTaskDetail: PropTypes.func.isRequired,
   onTaskClick: PropTypes.func.isRequired,
-  setTasks: PropTypes.func.isRequired, // Include setTasks in propTypes
+  setTasks: PropTypes.func.isRequired,
 };
 
 export default TaskList;
