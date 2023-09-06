@@ -22,31 +22,60 @@
 }
 
 .task-name.new {
-  background-color: #ffc4c486;
+  color: rgb(213, 36, 36);
+  font-weight: bold;
+  animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
+}
+
+@keyframes newTaskAnimation {
+  0%,
+  100% {
+    opacity: 0; /* Start and end with opacity 0 (hidden) */
+  }
+  50% {
+    opacity: 1; /* Peak opacity (visible) at 50% of the animation */
+  }
 }
 
 .task-name.processing {
-  background-color: #fefec9;
+  color: rgb(73 176 87);
+  font-weight: bold;
+  font-style: italic;
+  animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
+}
+
+@keyframes newTaskAnimation {
+  0%,
+  100% {
+    opacity: 0; /* Start and end with opacity 0 (hidden) */
+  }
+  50% {
+    opacity: 1; /* Peak opacity (visible) at 50% of the animation */
+  }
 }
 
 .task-name.done {
-  background-color: hsl(143, 72%, 94%);
+  color: #777; /* Use a muted or gray color */
+  text-decoration: line-through; /* Add a line-through to the text */
+  font-style: normal; /* Reset font style (remove italic if set for processing) */
+  font-weight: normal; /* Reset font weight (remove bold if set for new) */
+  animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
+}
+
+@keyframes newTaskAnimation {
+  0%,
+  100% {
+    opacity: 0; /* Start and end with opacity 0 (hidden) */
+  }
+  50% {
+    opacity: 1; /* Peak opacity (visible) at 50% of the animation */
+  }
 }
 
 .buttons-right {
   margin-left: auto;
 }
 
-button {
-  background-color: #ff6347;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-  margin-left: auto;
-  margin-right: 10px;
-}
-
 button:hover {
-  background-color: #ff7e63;
+  background-color: #ff2d03;
 }

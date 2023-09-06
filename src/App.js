@@ -1,4 +1,3 @@
-// App.js
 import React, { useState, useEffect } from "react";
 import "./styles/App.css";
 import TaskList from "./components/TaskList";
@@ -66,7 +65,7 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Task Manager</h1>
+      <h1>Task Manager App</h1>
       <TaskForm addTask={addTask} />
       <TaskFilter onFilterChange={handleFilterChange} />
       <TaskList

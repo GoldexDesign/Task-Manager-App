@@ -2,6 +2,7 @@
   position: fixed;
   top: 0;
   left: 0;
+
   width: 100vw;
   height: 100vh;
   background-color: rgba(0, 0, 0, 0.6);
@@ -16,7 +17,7 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  max-width: 80%;
-  max-height: 80%;
+  max-width: 90%; /* Increase the maximum width to 90% of the viewport width */
+  max-height: 90%; /* Increase the maximum height to 90% of the viewport height */
   overflow: auto;
 }
