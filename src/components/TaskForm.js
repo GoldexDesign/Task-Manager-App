@@ -20,6 +20,8 @@ function TaskForm({ addTask }) {
       <input
         required
         type="text"
+        id="taskName" // Add an id attribute
+        name="taskName" // Add a name attribute
         placeholder="Enter task"
         value={taskName}
         onChange={(event) => setTaskName(event.target.value)}
