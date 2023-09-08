@@ -1,20 +1,23 @@
-/* TaskFilter.css */
-
 .task-filter {
-  display: flex;
   align-items: center;
   margin-top: 40px;
-  margin-bottom: 10px;
-
-  margin-left: auto; /* Move to the right side */
-  margin-right: 10px; /* Add 10px margin */
 }
 
 label {
   margin-right: 5px;
+  color: rgb(56, 140, 184);
 }
 
 select {
+  color: rgb(56, 140, 184);
   padding: 5px;
-  border-radius: 4px;
+  border-color: rgb(56, 140, 184);
+  border-radius: 10px;
+  size-adjust: auto;
+  background-color: rgb(247, 246, 144);
+  border-style: outset;
+}
+select:focus {
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+  outline: none; /* Da biste uklonili podrazumevani okvir za fokusiranje */
 }

@@ -4,6 +4,7 @@ import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 import TaskFilter from "./components/TaskFilter";
 import TaskDetailPopup from "./components/TaskDetailPopup";
+import logo from "./styles/LogoTaskManager.png"; // Import your logo image
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -65,7 +66,10 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Task Manager App</h1>
+      <div className="header">
+        <img src={logo} alt="Task Manager Logo" className="logo" />
+        <h1>TASK MANAGER</h1>
+      </div>
       <TaskForm addTask={addTask} />
       <TaskFilter onFilterChange={handleFilterChange} />
       <TaskList
@@ -84,6 +88,8 @@ function App() {
           onSave={handleSaveTaskDetail}
         />
       )}
+      {/* Add the Chart component here
+      <Chart statuses={calculateStatusPercentages()} /> */}
     </div>
   );
 }

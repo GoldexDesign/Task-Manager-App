@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 import TaskItem from "./TaskItem";
+import "../styles/TaskList.css";
 
 function TaskList({
   tasks,
@@ -11,31 +12,39 @@ function TaskList({
   onTaskClick,
   setTasks,
 }) {
+  // Load tasks from local storage when the component mounts
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
     setTasks((prevTasks) => [...prevTasks, ...savedTasks]);
   }, [setTasks]);
 
-  // Sort tasks based on their status
-  const sortedTasks = tasks.slice().sort((a, b) => {
+  // Function to sort tasks based on their status
+  const sortTasks = (a, b) => {
     if (a.status === "New" && b.status !== "New") return -1;
     if (a.status === "Processing" && b.status === "Done") return -1; // Put "Done" at the end
     if (a.status === "Done" && b.status !== "Done") return 1;
     return 0;
-  });
+  };
 
-  const filteredTasks = sortedTasks.filter((task) => {
-    if (currentFilter === "all") {
-      return true;
-    } else if (currentFilter === "new") {
-      return task.status === "New";
-    } else if (currentFilter === "processing") {
-      return task.status === "Processing";
-    } else if (currentFilter === "done") {
-      return task.status === "Done";
+  // Function to filter tasks based on the current filter
+  const filterTasks = (task) => {
+    switch (currentFilter) {
+      case "all":
+        return true;
+      case "new":
+        return task.status === "New";
+      case "processing":
+        return task.status === "Processing";
+      case "done":
+        return task.status === "Done";
+      default:
+        return false;
     }
-    return false;
-  });
+  };
+
+  // Sort and filter tasks
+  const sortedTasks = [...tasks].sort(sortTasks);
+  const filteredTasks = sortedTasks.filter(filterTasks);
 
   return (
     <div className="task-list">

@@ -1,23 +1,32 @@
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0, 0, 0, 0.6);
-  display: flex;
-  justify-content: center;
+.popup-inner {
+  display: inline-block; /* Use inline-block for dynamic width */
   align-items: center;
-  z-index: 1000; /* Ensure the popup is on top of other content */
+  color: rgb(56, 140, 184);
+  background-color: rgb(247, 246, 144);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid rgb(56, 140, 184);
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
 }
 
-.popup-inner {
+.popup-buttons {
+  padding: 5px;
+  align-items: center;
+}
+
+textarea.Notes {
+  display: flex;
+  align-items: center;
+  color: rgb(56, 140, 184);
+  padding: 10px;
+  border-radius: 10px 10px 0px 10px;
+  border: 1px solid rgb(56, 140, 184);
   background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
-  max-width: 90%; /* Increase the maximum width to 90% of the viewport width */
-  max-height: 90%; /* Increase the maximum height to 90% of the viewport height */
-  overflow: auto;
+  height: 200px; /* Postavite željenu visinu */
+  width: 200px;
+}
+/* box-shadow focus */
+textarea.Notes:focus {
+  box-shadow: 3px 2px 5px rgb(56, 140, 184); /* Shadow */
+  outline: none; /* remove black border when typing*/
 }

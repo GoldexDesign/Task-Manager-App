@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import "../styles/TaskDetailPopup.css";
 
-function TaskDetailPopup({ task, onClose, onSave }) {
+function TaskDetailPopup({ task, onClose, onSave, taskIndex }) {
   const [notes, setNotes] = useState(task.notes || "");
 
   const handleSave = () => {
@@ -16,8 +17,9 @@ function TaskDetailPopup({ task, onClose, onSave }) {
   return (
     <div className="popup">
       <div className="popup-inner">
-        <h2>Task Details</h2>
+        <label>Task Details</label>
         <textarea
+          className="Notes"
           value={notes}
           onChange={handleNotesChange}
           placeholder="Add notes..."
@@ -35,6 +37,7 @@ TaskDetailPopup.propTypes = {
   task: PropTypes.object.isRequired,
   onClose: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
+  taskIndex: PropTypes.number.isRequired,
 };
 
 export default TaskDetailPopup;

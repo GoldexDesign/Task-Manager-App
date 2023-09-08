@@ -2,18 +2,46 @@ body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: #cbe9f230;
 }
 
 .app {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  font-weight: 900;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  color: rgb(56, 140, 184);
+  border-color: rgb(56, 140, 184);
+  border-radius: 10px;
+  size-adjust: auto;
+  background-color: rgb(247, 246, 144);
+  align-items: center;
+  padding: 10px;
+  border: 2px solid rgb(56, 140, 184);
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+}
+
+/* Style for the logo */
+.logo {
+  width: 70px; /* Adjust the width as needed */
+  height: 70px; /* Adjust the height as needed */
+  margin-right: auto; /* Pushes the logo to the left */
 }
 
 h1 {
   text-align: center;
-  margin-bottom: 20px;
+  margin: 0;
+  text-align: center;
+  flex-grow: 1; /* Allows the text to take up remaining space and be centered */
+  font-size: 40px; /* Adjust the font size as needed */
+  font-weight: 1000; /* Adjust the font weight as needed */
+  color: rgb(56, 140, 184);
+  font-family: system-ui;
 }
 
 /* Media Queries for Responsiveness */

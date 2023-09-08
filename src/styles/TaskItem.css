@@ -4,21 +4,24 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #ccc;
+  border: 1px solid rgb(56, 140, 184);
+  border-radius: 10px;
+  border-color: rgb(56, 140, 184);
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
 }
 
 .task-status {
   margin-right: 10px;
   padding: 4px 8px;
-  border-radius: 4px;
+  border-radius: 10px;
   font-weight: bold;
 }
 
 .task-name {
   flex: 1;
   padding: 4px 8px;
-  border-radius: 4px;
-  color: black;
+  border-radius: 10px;
+  color: rgb(56, 140, 184);
 }
 
 .task-name.new {
@@ -38,7 +41,7 @@
 }
 
 .task-name.processing {
-  color: rgb(73 176 87);
+  color: rgb(56, 140, 184);
   font-weight: bold;
   font-style: italic;
   animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
@@ -78,4 +81,15 @@
 
 button:hover {
   background-color: #ff2d03;
+}
+.select-filter 
+  /* Styling for the select element */
+ {
+  color: rgb(56, 140, 184);
+  padding: 5px;
+  border-color: rgb(56, 140, 184);
+  border-radius: 10px;
+  size-adjust: auto;
+  background-color: rgb(247, 246, 144);
+  border-style: outset;
 }

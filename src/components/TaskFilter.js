@@ -13,7 +13,7 @@ function TaskFilter({ onFilterChange }) {
 
   return (
     <div className="task-filter">
-      <label htmlFor="filter">Filter Tasks:</label>
+      <label>Filter Tasks:</label>
       <select id="filter" value={selectedFilter} onChange={handleFilterChange}>
         <option value="all">All Tasks</option>
         <option value="new">New</option>
