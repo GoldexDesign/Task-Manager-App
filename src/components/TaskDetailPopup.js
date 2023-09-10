@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import Modal from "react-modal";
 import "../styles/TaskDetailPopup.css";
 
-function TaskDetailPopup({ task, onClose, onSave, taskIndex }) {
+Modal.setAppElement("#root"); // Set the root element for accessibility
+
+function TaskDetailPopup({ task, onClose, onSave, taskIndex, isOpen }) {
   const [notes, setNotes] = useState(task.notes || "");
 
   const handleSave = () => {
@@ -15,10 +18,17 @@ function TaskDetailPopup({ task, onClose, onSave, taskIndex }) {
   };
 
   return (
-    <div className="popup">
+    <Modal
+      isOpen={isOpen} // Use the isOpen prop to control modal visibility
+      onRequestClose={onClose}
+      contentLabel="Task Details"
+      className="custom-modal" // Apply custom class
+      overlayClassName="custom-overlay" // Apply custom overlay class
+    >
       <div className="popup-inner">
-        <label>Task Details</label>
+        <label htmlFor="notes">Task Details</label>
         <textarea
+          id="notes"
           className="Notes"
           value={notes}
           onChange={handleNotesChange}
@@ -29,7 +39,7 @@ function TaskDetailPopup({ task, onClose, onSave, taskIndex }) {
           <button onClick={onClose}>Cancel</button>
         </div>
       </div>
-    </div>
+    </Modal>
   );
 }
 
@@ -38,6 +48,7 @@ TaskDetailPopup.propTypes = {
   onClose: PropTypes.func.isRequired,
   onSave: PropTypes.func.isRequired,
   taskIndex: PropTypes.number.isRequired,
+  isOpen: PropTypes.bool.isRequired, // Ensure isOpen is a boolean prop
 };
 
 export default TaskDetailPopup;

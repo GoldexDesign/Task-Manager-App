@@ -4,12 +4,13 @@ import TaskList from "./components/TaskList";
 import TaskForm from "./components/TaskForm";
 import TaskFilter from "./components/TaskFilter";
 import TaskDetailPopup from "./components/TaskDetailPopup";
-import logo from "./styles/LogoTaskManager.png"; // Import your logo image
+import logo from "./styles/LogoTaskManager.png";
 
 function App() {
   const [tasks, setTasks] = useState([]);
   const [filter, setFilter] = useState("all");
   const [selectedTask, setSelectedTask] = useState(null);
+  const [isModalActive, setIsModalActive] = useState(false); // Track modal state
 
   // Load tasks from local storage when the component mounts
   useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
   const handleTaskClick = (taskId) => {
     const task = tasks.find((task) => task.id === taskId);
     setSelectedTask(task);
+    setIsModalActive(true); // Open the modal when a task is clicked
   };
 
   const handleSaveTaskDetail = (taskId, notes) => {
@@ -28,6 +30,7 @@ function App() {
     );
     setTasks(updatedTasks);
     setSelectedTask(null);
+    setIsModalActive(false); // Close the modal after saving
     // Save the updated tasks to local storage
     localStorage.setItem("tasks", JSON.stringify(updatedTasks));
   };
@@ -79,17 +82,20 @@ function App() {
         currentFilter={filter}
         onSaveTaskDetail={handleSaveTaskDetail}
         onTaskClick={handleTaskClick}
-        setTasks={setTasks} // Pass setTasks as a prop
+        setTasks={setTasks}
       />
-      {selectedTask && (
+      {selectedTask && isModalActive && (
         <TaskDetailPopup
           task={selectedTask}
-          onClose={() => setSelectedTask(null)}
+          onClose={() => {
+            setSelectedTask(null);
+            setIsModalActive(false);
+          }}
           onSave={handleSaveTaskDetail}
+          taskIndex={selectedTask.id}
+          isOpen={isModalActive}
         />
       )}
-      {/* Add the Chart component here
-      <Chart statuses={calculateStatusPercentages()} /> */}
     </div>
   );
 }

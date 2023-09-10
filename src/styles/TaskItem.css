@@ -47,32 +47,12 @@
   animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
 }
 
-@keyframes newTaskAnimation {
-  0%,
-  100% {
-    opacity: 0; /* Start and end with opacity 0 (hidden) */
-  }
-  50% {
-    opacity: 1; /* Peak opacity (visible) at 50% of the animation */
-  }
-}
-
 .task-name.done {
   color: #777; /* Use a muted or gray color */
   text-decoration: line-through; /* Add a line-through to the text */
   font-style: normal; /* Reset font style (remove italic if set for processing) */
   font-weight: normal; /* Reset font weight (remove bold if set for new) */
   animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
-}
-
-@keyframes newTaskAnimation {
-  0%,
-  100% {
-    opacity: 0; /* Start and end with opacity 0 (hidden) */
-  }
-  50% {
-    opacity: 1; /* Peak opacity (visible) at 50% of the animation */
-  }
 }
 
 .buttons-right {
@@ -82,14 +62,13 @@
 button:hover {
   background-color: #ff2d03;
 }
-.select-filter 
-  /* Styling for the select element */
- {
+
+/* Styling for the select element */
+.select-filter {
   color: rgb(56, 140, 184);
   padding: 5px;
-  border-color: rgb(56, 140, 184);
+  border: 1px solid rgb(56, 140, 184);
   border-radius: 10px;
-  size-adjust: auto;
   background-color: rgb(247, 246, 144);
-  border-style: outset;
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
 }

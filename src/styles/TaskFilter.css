@@ -1,3 +1,19 @@
+/* CSS for the select element with id "filter" */
+#filter {
+  color: rgb(56, 140, 184);
+  padding: 5px;
+  border: 1px solid rgb(56, 140, 184);
+  border-radius: 10px;
+  background-color: rgb(247, 246, 144);
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+}
+
+#filter:focus {
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Existing CSS for .task-filter */
 .task-filter {
   align-items: center;
   margin-top: 40px;
@@ -6,18 +22,4 @@
 label {
   margin-right: 5px;
   color: rgb(56, 140, 184);
-}
-
-select {
-  color: rgb(56, 140, 184);
-  padding: 5px;
-  border-color: rgb(56, 140, 184);
-  border-radius: 10px;
-  size-adjust: auto;
-  background-color: rgb(247, 246, 144);
-  border-style: outset;
-}
-select:focus {
-  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
-  outline: none; /* Da biste uklonili podrazumevani okvir za fokusiranje */
 }

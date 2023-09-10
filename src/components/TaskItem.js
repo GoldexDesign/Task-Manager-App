@@ -19,7 +19,11 @@ function TaskItem({ task, deleteTask, updateTaskStatus, onTaskClick }) {
         {task.name}
       </span>
       <div className="buttons-right">
-        <select className="select-filter" value={task.status} onChange={handleStatusChange}>
+        <select
+          className="select-filter"
+          value={task.status}
+          onChange={handleStatusChange}
+        >
           <option value="New">New</option>
           <option value="Processing">Processing</option>
           <option value="Done">Done</option>

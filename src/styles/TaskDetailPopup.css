@@ -1,8 +1,36 @@
+/* CSS for the TaskDetailPopup component */
+.custom-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999; /* Make sure the modal appears on top */
+  outline: none; /* Disable the default outline */
+}
+
+/* CSS class to apply the overlay effect to the app */
+.custom-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.2
+  ); /* Slightly darker and semi-transparent background */
+  z-index: 998; /* Place it beneath the modal */
+}
+
 .popup-inner {
-  display: inline-block; /* Use inline-block for dynamic width */
-  align-items: center;
+  display: flex; /* Use flexbox to center vertically and horizontally */
+  flex-direction: column; /* Align items in a column */
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
   color: rgb(56, 140, 184);
-  background-color: rgb(247, 246, 144);
+  background-color: rgba(247, 246, 144, 0.9); /* Modal content background */
   padding: 10px;
   border-radius: 10px;
   border: 1px solid rgb(56, 140, 184);
@@ -10,8 +38,14 @@
 }
 
 .popup-buttons {
-  padding: 5px;
-  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Add some margin to separate the buttons */
+}
+
+.popup-buttons button {
+  margin: 0 5px; /* Add margin to both sides of the buttons */
+  width: 100px; /* Adjust the width as needed */
 }
 
 textarea.Notes {
@@ -22,11 +56,17 @@ textarea.Notes {
   border-radius: 10px 10px 0px 10px;
   border: 1px solid rgb(56, 140, 184);
   background-color: white;
-  height: 200px; /* Postavite željenu visinu */
+  height: 200px; /* Set your desired height */
   width: 200px;
 }
+
 /* box-shadow focus */
 textarea.Notes:focus {
   box-shadow: 3px 2px 5px rgb(56, 140, 184); /* Shadow */
-  outline: none; /* remove black border when typing*/
+  outline: none; /* Remove black border when typing */
+}
+
+/* Remove default focus outline for select elements */
+select:focus {
+  outline: none;
 }
