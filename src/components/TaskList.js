@@ -8,7 +8,6 @@ function TaskList({
   deleteTask,
   updateTaskStatus,
   currentFilter,
-  onSaveTaskDetail,
   onTaskClick,
   setTasks,
 }) {
@@ -48,13 +47,12 @@ function TaskList({
 
   return (
     <div className="task-list">
-      {filteredTasks.map((task) => (
+      {filteredTasks.map((task, index) => (
         <TaskItem
-          key={task.id}
+          key={task.id + index} // Use a combination of task.id and index to ensure uniqueness
           task={task}
           deleteTask={deleteTask}
           updateTaskStatus={updateTaskStatus}
-          onSaveTaskDetail={onSaveTaskDetail}
           onTaskClick={onTaskClick}
         />
       ))}
@@ -67,7 +65,6 @@ TaskList.propTypes = {
   deleteTask: PropTypes.func.isRequired,
   updateTaskStatus: PropTypes.func.isRequired,
   currentFilter: PropTypes.string.isRequired,
-  onSaveTaskDetail: PropTypes.func.isRequired,
   onTaskClick: PropTypes.func.isRequired,
   setTasks: PropTypes.func.isRequired,
 };

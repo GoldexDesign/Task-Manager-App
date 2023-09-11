@@ -1,32 +1,52 @@
-// Chart.js
-
 import React from "react";
-import "../styles/Chart.css";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
-const Chart = ({ statuses }) => {
-  const renderSlices = () => {
-    let startAngle = 0;
+const CircleChart = ({ tasks }) => {
+  // Calculate the percentages
+  const totalTasks = tasks.length;
+  const doneTasks = tasks.filter((task) => task.status === "Done").length;
+  const processingTasks = tasks.filter((task) => task.status === "Processing")
+    .length;
+  const newTasks = tasks.filter((task) => task.status === "New").length;
 
-    return Object.keys(statuses).map((status, index) => {
-      const angle = (statuses[status] / 100) * 360;
-      const sliceStyle = {
-        transform: `rotate(${startAngle}deg)`,
-        clip: "rect(0px, 100px, 200px, 0px)",
-      };
+  const donePercentage = (doneTasks / totalTasks) * 100;
+  const processingPercentage = (processingTasks / totalTasks) * 100;
+  const newPercentage = (newTasks / totalTasks) * 100;
 
-      startAngle += angle;
-
-      return (
-        <div
-          key={index}
-          className={`slice ${status.toLowerCase()}`}
-          style={sliceStyle}
-        ></div>
-      );
-    });
+  // Define your chart options
+  const options = {
+    chart: {
+      type: "pie", // Use 'pie' for a circle chart
+    },
+    title: {
+      text: "Circle Chart Example",
+    },
+    series: [
+      {
+        data: [
+          {
+            name: "Done",
+            y: donePercentage, // Use the calculated percentage
+          },
+          {
+            name: "Processing",
+            y: processingPercentage, // Use the calculated percentage
+          },
+          {
+            name: "New",
+            y: newPercentage, // Use the calculated percentage
+          },
+        ],
+      },
+    ],
   };
 
-  return <div className="pie-chart">{renderSlices()}</div>;
+  return (
+    <div>
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
+  );
 };
 
-export default Chart;
+export default CircleChart;

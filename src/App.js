@@ -19,6 +19,7 @@ function App() {
   }, []);
 
   const handleTaskClick = (taskId) => {
+    console.log("handleTaskClick called for task ID:", taskId); // Debugging log
     const task = tasks.find((task) => task.id === taskId);
     setSelectedTask(task);
     setIsModalActive(true); // Open the modal when a task is clicked
