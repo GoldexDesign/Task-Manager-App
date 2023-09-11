@@ -1,7 +1,9 @@
+/* Existing CSS */
+
 body {
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
 }
 
 .app {
@@ -9,7 +11,9 @@ body {
   margin: 0 auto;
   padding: 20px;
   font-weight: 900;
+  background-color: #f5f5f5;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -20,26 +24,23 @@ body {
   border-radius: 10px;
   size-adjust: auto;
   background-color: rgb(247, 246, 144);
-  align-items: center;
   padding: 10px;
   border: 2px solid rgb(56, 140, 184);
-  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+  box-shadow: 2px 1px 3px rgb(56, 140, 184);
 }
 
 /* Style for the logo */
 .logo {
-  width: 70px; /* Adjust the width as needed */
-  height: 70px; /* Adjust the height as needed */
-  margin-right: auto; /* Pushes the logo to the left */
+  width: 70px;
+  height: 70px;
+  margin-right: 10px; /* Add margin to separate logo from h1 */
 }
 
 h1 {
   text-align: center;
   margin: 0;
-  text-align: center;
-  flex-grow: 1; /* Allows the text to take up remaining space and be centered */
-  font-size: 40px; /* Adjust the font size as needed */
-  font-weight: 1000; /* Adjust the font weight as needed */
+  font-size: 40px;
+  font-weight: 1000;
   color: rgb(56, 140, 184);
   font-family: system-ui;
 }
@@ -51,12 +52,34 @@ h1 {
   .app {
     padding: 10px;
   }
+  .header {
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    align-items: center;
+  }
+  .logo {
+    margin: 0 0 10px; /* Add margin to separate logo from h1 */
+  }
+  h1,
+  .logo {
+    text-align: center; /* Center the text and logo horizontally */
+  }
 }
 
 /* Tablets and Small Desktops */
 @media (min-width: 769px) and (max-width: 1024px) {
   .app {
     padding: 15px;
+  }
+  .header {
+    flex-direction: column; /* Stack elements vertically on medium screens */
+    align-items: center;
+  }
+  .logo {
+    margin: 0 0 10px; /* Add margin to separate logo from h1 */
+  }
+  h1,
+  .logo {
+    text-align: center; /* Center the text and logo horizontally */
   }
 }
 
@@ -65,19 +88,15 @@ h1 {
   .app {
     padding: 20px;
   }
+  .header {
+    justify-content: center; /* Center both elements horizontally */
+    align-items: center; /* Center both elements vertically */
+  }
+  .logo {
+    margin-right: 10px; /* Add margin to separate logo from h1 */
+  }
+  h1,
+  .logo {
+    text-align: center; /* Center the text and logo horizontally */
+  }
 }
-
-/*
-In this example:
-
-    The body and .app styles set up the base layout and width for the app container. The app is centered horizontally with a maximum width of 1200px.
-
-    The h1 style centers the app title.
-
-    Three media queries are used to adjust the padding of the .app container for different screen sizes. The max-width values determine when each media query takes effect.
-        On mobile devices (up to 768px width), the padding is reduced to 10px.
-        On tablets and small desktops (769px to 1024px width), the padding is increased to 15px.
-        On larger desktops and wider screens (1025px and above), the padding is set back to 20px.
-
-
-*/

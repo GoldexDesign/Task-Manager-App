@@ -5,6 +5,7 @@ import TaskForm from "./components/TaskForm";
 import TaskFilter from "./components/TaskFilter";
 import TaskDetailPopup from "./components/TaskDetailPopup";
 import logo from "./styles/LogoTaskManager.png";
+import CircleChart from "./components/CircleChart"; // Update the path if necessary
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -97,6 +98,7 @@ function App() {
           isOpen={isModalActive}
         />
       )}
+      <CircleChart tasks={tasks} /> {/* Add this line to display the chart */}
     </div>
   );
 }

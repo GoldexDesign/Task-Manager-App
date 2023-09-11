@@ -1,13 +1,17 @@
 /* CSS for the select element with id "filter" */
 #filter {
   color: rgb(56, 140, 184);
+  font-weight: bold;
   padding: 5px;
   border: 1px solid rgb(56, 140, 184);
   border-radius: 10px;
   background-color: rgb(247, 246, 144);
-  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
 }
 
+#filter:hover {
+  box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+  outline: none; /* Remove the default focus outline */
+}
 #filter:focus {
   box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
   outline: none; /* Remove the default focus outline */

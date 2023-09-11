@@ -25,7 +25,7 @@
 }
 
 .task-name.new {
-  color: rgb(213, 36, 36);
+  color: rgb(56, 140, 184);
   font-weight: bold;
   animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
 }
@@ -42,13 +42,13 @@
 
 .task-name.processing {
   color: rgb(56, 140, 184);
-  font-weight: bold;
-  font-style: italic;
+  font-weight: 350;
+
   animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
 }
 
 .task-name.done {
-  color: #777; /* Use a muted or gray color */
+  color: rgb(56, 140, 184); /* Use a muted or gray color */
   text-decoration: line-through; /* Add a line-through to the text */
   font-style: normal; /* Reset font style (remove italic if set for processing) */
   font-weight: normal; /* Reset font weight (remove bold if set for new) */
@@ -66,9 +66,14 @@ button:hover {
 /* Styling for the select element */
 .select-filter {
   color: rgb(56, 140, 184);
+  font-weight: 550px;
   padding: 5px;
   border: 1px solid rgb(56, 140, 184);
   border-radius: 10px;
   background-color: rgb(247, 246, 144);
+  font-weight: bold;
+}
+.select-filter:hover {
+  border-color: rgb(56, 140, 184);
   box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
 }
