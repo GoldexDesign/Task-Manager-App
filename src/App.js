@@ -6,6 +6,7 @@ import TaskFilter from "./components/TaskFilter";
 import TaskDetailPopup from "./components/TaskDetailPopup";
 import logo from "./styles/LogoTaskManager.png";
 import CircleChart from "./components/CircleChart"; // Update the path if necessary
+import Footer from "./components/Footer";
 
 function App() {
   const [tasks, setTasks] = useState([]);
@@ -99,6 +100,7 @@ function App() {
         />
       )}
       <CircleChart tasks={tasks} /> {/* Add this line to display the chart */}
+      <Footer />
     </div>
   );
 }

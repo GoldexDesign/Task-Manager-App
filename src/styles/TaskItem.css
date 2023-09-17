@@ -8,6 +8,7 @@
   border-radius: 10px;
   border-color: rgb(56, 140, 184);
   box-shadow: 2px 1px 3px rgb(56, 140, 184); /* Shadow */
+  position: relative; /* Ensure positioning context for the notification */
 }
 
 .task-status {
@@ -22,6 +23,28 @@
   padding: 4px 8px;
   border-radius: 10px;
   color: rgb(56, 140, 184);
+}
+.task-item::before {
+  /* Styles for the notification */
+  content: "Click to add notes to task"; /* Your notification text */
+  position: absolute;
+  top: calc(70%); /* Position it just below the task item */
+  left: 0;
+  border: 1px solid rgba(0, 0, 0, 0.8); /* Add a minimal border to the notification */
+  background-color: #ffffff; /* Solid white background for the notification
+  color: rgb(0, 0, 0); /* Text color for the notification */
+  padding: 3px; /* Add some padding for better readability */
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 100;
+  white-space: nowrap; /* Prevent text from wrapping */
+  opacity: 0; /* Initially hide the notification */
+  pointer-events: none; /* Make the notification non-interactive */
+  transition: opacity 2s; /* Add a smooth transition for opacity */
+}
+
+.task-item:hover::before {
+  opacity: 1; /* Show the notification on hover */
 }
 
 .task-name.new {

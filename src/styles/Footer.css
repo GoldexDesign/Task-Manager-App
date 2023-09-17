@@ -1,0 +1,43 @@
+.app-footer {
+  background-color: #6b6969; /* Background color for the footer */
+  color: #060606; /* Text color for the footer */
+  padding: 5px; /* Add padding to give some space around the content */
+  text-align: center; /* Center-align the content */
+}
+.copyright {
+  padding: 10px;
+}
+
+.app-footer p {
+  margin: 0; /* Remove any default margin for paragraphs */
+}
+
+.contact a {
+  color: #56b4e9; /* Link color for contact email */
+  text-decoration: none; /* Remove underlines from links */
+  margin-left: 5px; /* Add some space between the email and social media icons */
+}
+
+.social-media {
+  margin-top: 0px; /* Add space between contact and social media icons */
+}
+
+.social-media a {
+  font-size: 24px; /* Adjust the size of social media icons */
+  color: #fff; /* Color of social media icons */
+  margin: 0 10px; /* Add space between social media icons */
+  text-decoration: none; /* Remove underlines from links */
+}
+
+.feedback-survey {
+  margin-top: 20px; /* Add space between social media icons and feedback/survey link */
+}
+
+.feedback-survey a {
+  color: #56b4e9; /* Link color for feedback/survey */
+  text-decoration: none; /* Remove underlines from links */
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
