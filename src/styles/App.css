@@ -74,9 +74,7 @@ h1 {
     flex-direction: column; /* Stack elements vertically on medium screens */
     align-items: center;
   }
-  .logo {
-    margin: 0 0 10px; /* Add margin to separate logo from h1 */
-  }
+
   h1,
   .logo {
     text-align: center; /* Center the text and logo horizontally */
@@ -92,9 +90,7 @@ h1 {
     justify-content: center; /* Center both elements horizontally */
     align-items: center; /* Center both elements vertically */
   }
-  .logo {
-    margin-right: 10px; /* Add margin to separate logo from h1 */
-  }
+
   h1,
   .logo {
     text-align: center; /* Center the text and logo horizontally */
