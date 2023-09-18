@@ -6,6 +6,11 @@
   border: 1px solid rgb(56, 140, 184);
   border-radius: 10px;
   background-color: rgb(247, 246, 144);
+  text-align: center;
+}
+
+.select-filter {
+  text-align: center;
 }
 
 #filter:hover {

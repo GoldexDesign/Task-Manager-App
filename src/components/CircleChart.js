@@ -18,6 +18,7 @@ const CircleChart = ({ tasks }) => {
   const options = {
     chart: {
       type: "pie",
+      backgroundColor: "#f5f5f5",
     },
     title: {
       text: "Task Status Composition",
@@ -50,7 +51,7 @@ const CircleChart = ({ tasks }) => {
             halo: {
               size: 10, // Customize the halo size on hover
             },
-            brightness: 0.2, // Adjust brightness on hover (0.2 = 20% brighter)
+            brightness: 0.1, // Adjust brightness on hover (0.2 = 20% brighter)
           },
         },
       },

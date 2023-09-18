@@ -1,8 +1,10 @@
 .app-footer {
-  background-color: #6b6969; /* Background color for the footer */
-  color: #060606; /* Text color for the footer */
+  background-color: rgb(56, 140, 184); /* Background color for the footer */
+  color: rgb(247, 246, 144); /* Text color for the footer */
   padding: 5px; /* Add padding to give some space around the content */
   text-align: center; /* Center-align the content */
+  border-radius: 10px;
+  box-shadow: 0px 0px 1px 1px rgb(56, 140, 184, 0.3);
 }
 .copyright {
   padding: 10px;
@@ -13,9 +15,13 @@
 }
 
 .contact a {
-  color: #56b4e9; /* Link color for contact email */
+  color: white; /* Link color for contact email */
   text-decoration: none; /* Remove underlines from links */
   margin-left: 5px; /* Add some space between the email and social media icons */
+  transition: text-decoration 0.2s;
+}
+.contact a:hover {
+  text-decoration: underline; /* Add underline on hover */
 }
 
 .social-media {

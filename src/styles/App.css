@@ -10,7 +10,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-weight: 900;
+  font-weight: 300;
   background-color: #f5f5f5;
 }
 
@@ -22,11 +22,10 @@ body {
   color: rgb(56, 140, 184);
   border-color: rgb(56, 140, 184);
   border-radius: 10px;
-  size-adjust: auto;
   background-color: rgb(247, 246, 144);
   padding: 10px;
-  border: 2px solid rgb(56, 140, 184);
-  box-shadow: 2px 1px 3px rgb(56, 140, 184);
+  border: 5px solid rgb(56, 140, 184);
+  box-shadow: 0px 0px 1px 1px rgb(55, 140, 184, 0.3);
 }
 
 /* Style for the logo */
@@ -56,9 +55,7 @@ h1 {
     flex-direction: column; /* Stack elements vertically on smaller screens */
     align-items: center;
   }
-  .logo {
-    margin: 0 0 10px; /* Add margin to separate logo from h1 */
-  }
+
   h1,
   .logo {
     text-align: center; /* Center the text and logo horizontally */
