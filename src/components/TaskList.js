@@ -18,12 +18,19 @@ function TaskList({
   // Load tasks from local storage when the component mounts
   useEffect(() => {
     const savedTasks = JSON.parse(localStorage.getItem("tasks")) || [];
-    setTasks((prevTasks) => [...prevTasks, ...savedTasks]);
+    setTasks(savedTasks);
   }, [setTasks]);
 
   const handleDeleteClick = (task) => {
     setTaskToDelete(task);
     setShowDeleteModal(true);
+  };
+
+  const handleDeleteConfirm = () => {
+    if (taskToDelete) {
+      deleteTask(taskToDelete.id);
+      setShowDeleteModal(false);
+    }
   };
 
   // Function to sort tasks based on their status
@@ -70,10 +77,7 @@ function TaskList({
         <DeleteTaskModal
           task={taskToDelete}
           onCancel={() => setShowDeleteModal(false)}
-          onDelete={() => {
-            deleteTask(taskToDelete);
-            setShowDeleteModal(false);
-          }}
+          onDelete={handleDeleteConfirm}
         />
       )}
     </div>
