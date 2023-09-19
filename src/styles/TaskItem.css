@@ -65,7 +65,7 @@
 
 .task-name.processing {
   color: rgb(56, 140, 184);
-  font-weight: 350;
+  font-weight: 450;
 
   animation: newTaskAnimation 0.8s ease-in-out 1; /* Animation for 2 seconds with 2 iterations */
 }
