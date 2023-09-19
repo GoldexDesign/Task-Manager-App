@@ -1,7 +1,10 @@
 The Task Manager app constantly evolving to meet its full potential !
 
+Please check online: https://task-manager-app-one.vercel.app/
+If you run app in Google Chrome browser you can even install app (go to options and choose "Install Task Manager") on your device (IOS/Android/Windows...). And that's it you are ready to manage your tasks.
+
 The Task Manager App is a simple yet powerful web application built using ReactJS that helps you manage your tasks and stay organized. 
-With an intuitive user interface and essential features, this app is designed to streamline your task management process.
+With an intuitive user interface and essential features, this app is designed to streamline your task management process. The app employs local storage to store task data, allowing you to access and manage your tasks even after closing the browser.
 
 Features:
 
