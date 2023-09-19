@@ -22,7 +22,10 @@ Task Filtering: To streamline your task management, the app allows you to filter
     Processing Tasks: Filters tasks that are in the "Processing" status.
     Done Tasks: Focuses on tasks that have been marked as "Done."
 
-Task Deletion: If you've completed a task or decided that it's no longer necessary, the app enables you to delete tasks with a simple click. This feature keeps your task list tidy and clutter-free
+Task Deletion: If you've completed a task or decided that it's no longer necessary, the app enables you to delete tasks with a simple click. This feature keeps your task list tidy and clutter-free.
+
+The chart in Task Manager app provides a visual representation of task statuses, making it easy to see the distribution of tasks across "Done," "Processing," and "New" categories at a glance. 
+It offers a quick overview of your task management progress, helping you stay organized and focused.
 
 How to Run
 
