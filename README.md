@@ -1,21 +1,28 @@
-The Task Manager app is a work in progress, constantly evolving to meet its full potential !
+The Task Manager app constantly evolving to meet its full potential !
 
 The Task Manager App is a simple yet powerful web application built using ReactJS that helps you manage your tasks and stay organized. 
 With an intuitive user interface and essential features, this app is designed to streamline your task management process.
 
-Features
+Features:
 
-    Task List: A clean and organized list displays all your tasks, making it easy to see what needs your attention.
+Task List: The app provides a clean and organized list that displays all your tasks. This list makes it easy to see what tasks you have on your plate and what needs your attention.
 
-    Task Creation: Add new tasks seamlessly. Just type in your task's name, hit enter, and watch it appear on your list.
+Task Creation: Adding new tasks is a breeze. Simply type in the name of your task and hit enter or click the "Add Task" button. Your new task will be added to the list, complete with a date stamp.
 
-    Task Date: The date will automatically be added when a new task is created.
+Adding Task Notes: It's a quick and intuitive way to keep your task-related information organized.
 
-    Task Status: Mark tasks as New/Processing/Done, with each status having a unique color. This helps you track your progress at a glance.
+Task Date: When you create a new task, the app automatically adds a date stamp to it. This helps you keep track of when the task was added or when it's due.
 
-    Task Filtering: You can filter tasks based on their status. You can choose to view All, New, Processing, or Done tasks.
+Task Status: You can categorize tasks with different statuses: New, Processing, or Done. Each status is visually distinct, making it easy to differentiate between tasks that are in progress and those that are completed.
 
-    Task Deletion: Done a task or decided it's no longer necessary? No problem – delete tasks with a simple click.
+Task Filtering: To streamline your task management, the app allows you to filter tasks based on their status. You can choose to view:
+
+    All Tasks: Displays all tasks regardless of their status.
+    New Tasks: Shows only tasks that are marked as "New."
+    Processing Tasks: Filters tasks that are in the "Processing" status.
+    Done Tasks: Focuses on tasks that have been marked as "Done."
+
+Task Deletion: If you've completed a task or decided that it's no longer necessary, the app enables you to delete tasks with a simple click. This feature keeps your task list tidy and clutter-free
 
 How to Run
 
@@ -34,8 +41,7 @@ Run the App:
 
     npm start
 
-    Access the App:
-    Open your preferred web browser and navigate to http://localhost:3000 to access the Task Manager app.
+    
 
 How to Use
 
@@ -47,9 +53,12 @@ How to Use
         Locate the "Add Task" input at the top of the app.
         Enter the name of the new task and press the "Enter" key or click the "Add" button to include it in your list.
 
+    Adding Task Notes: 
+        Simply click on a task item (the task name) to access and edit the attached notes.    
+
     Manage Task Status:
         To mark a task as  New/Processing/Done, simply click the select next to the task's name.
-        The app will automatically update the task's status / color and reposition it based on your choice.
+        The app will automatically update the task's status / style and reposition it.
 
     Filter Your Tasks:
         Use the status filter buttons ( New/Processing/Done/All) to narrow down your task view.
@@ -66,7 +75,7 @@ Technologies Used
 
 Author
 
-    [Zlatko Skoric]
+    [Zlatko Skoric, Goldex Design & Development]
     GitHub: [https://github.com/GoldexDesign]
 
 License
